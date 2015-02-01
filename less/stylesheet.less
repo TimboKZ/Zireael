@@ -1,0 +1,1076 @@
+@import "import/variables";
+@import "import/mixins";
+@import "../../../EnTypo/EnTypo/stylesheet";
+
+html {
+  padding:0px;
+  margin:0px;
+}
+body {
+  background-color:@content-bg;
+  padding:0px 300px 0px 300px;
+  color:@content;
+  margin:0px;
+}
+#header {
+  background-color:@menu-bg;
+  position:fixed;
+  display:block;
+  padding:0px;
+  height:100%;
+  width:300px;
+  color:@menu;
+  margin:0px;
+  left:0px;
+  top:0px;
+  &:before {
+    content:'/r/Zireael v@{version} by /u/Timbo_KZ';
+    border-top:solid 1px @menu-border;
+    position:absolute;
+    line-height:40px;
+    padding:0px 15px;
+    font-size:12px;
+    height:40px;
+    width:270px;
+    bottom:0px;
+    left:0px;
+  }
+}
+#sr-header-area {
+  display:none;
+}
+#header-bottom-left {
+  font-size:0px;
+  padding:0px;
+  .redditname {
+    border-bottom:solid 1px @menu-border;
+    font-size:0px;
+    display:block;
+    height:60px;
+    margin:0px;
+    a {
+      padding:0px 20px 0px 50px;
+      font-variant:normal;
+      font-weight:normal;
+      position:relative;
+      .transition(slow);
+      line-height:60px;
+      font-size:18px;
+      display:block;
+      height:60px;
+      color:@menu;
+      &:hover {
+        background-color:@menu-bg-hover;
+        text-decoration:none;
+        color:@menu-hover;
+        &:before {
+          .sprite-pos(1, 2, 30px);
+        }
+      }
+      &:before {
+        .sprite(1, 1, 30px);
+        position:absolute;
+        .transition(slow);
+        height:30px;
+        content:'';
+        width:30px;
+        left:10px;
+        top:15px;
+      }
+    }
+  }
+}
+#header-img, #header-img-a {
+  display:none !important;
+}
+#header .tabmenu {
+  border-bottom:solid 1px @menu-border;
+  padding:40px 0px 0px 0px;
+  display:block !important;
+  position:relative;
+  font-size:18px;
+  margin:0px;
+  &:before {
+    text-transform:uppercase;
+    position:absolute;
+    line-height:40px;
+    padding:0px 15px;
+    font-size:12px;
+    content:'Menu';
+    height:40px;
+    left:0px;
+    top:0px;
+  }
+  li {
+    background-color:transparent !important;
+    border:none !important;
+    margin:0px !important;
+    display:block;
+    &.selected {
+      a {
+        background-color:@menu-bg-current !important;
+        color:@menu !important;
+        &:hover {
+          background-color:@menu-bg-current !important;
+        }
+      }
+    }
+    a {
+      background-color:transparent !important;
+      padding:10px 20px 10px 50px;
+      text-transform:capitalize;
+      border:none !important;
+      margin:0px !important;
+      font-weight:normal;
+      position:relative;
+      .transition(slow);
+      font-size:18px;
+      display:block;
+      color:@menu;
+      &:hover {
+        background-color:@menu-bg-hover !important;
+        color:@menu-hover;
+        &:before {
+          .sprite-pos(3, 2, 30px);
+        }
+      }
+      &:before {
+        .sprite(3, 1, 30px);
+        position:absolute;
+        .transition(slow);
+        height:30px;
+        content:'';
+        width:30px;
+        left:10px;
+        top:5px;
+      }
+      &[href*="/"] {
+        &:hover {
+          &:before {
+            .sprite-pos(2, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(2, 1, 30px);
+        }
+      }
+      &[href*="/new"] {
+        &:hover {
+          &:before {
+            .sprite-pos(3, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(3, 1, 30px);
+        }
+      }
+      &[href*="/rising"] {
+        &:hover {
+          &:before {
+            .sprite-pos(4, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(4, 1, 30px);
+        }
+      }
+      &[href*="/controversial"] {
+        &:hover {
+          &:before {
+            .sprite-pos(5, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(5, 1, 30px);
+        }
+      }
+      &[href*="/top"] {
+        &:hover {
+          &:before {
+            .sprite-pos(6, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(6, 1, 30px);
+        }
+      }
+      &[href*="/gilded"] {
+        &:hover {
+          &:before {
+            .sprite-pos(7, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(7, 1, 30px);
+        }
+      }
+      &[href*="/wiki"] {
+        &:hover {
+          &:before {
+            .sprite-pos(8, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(8, 1, 30px);
+        }
+      }
+      &[href*="/ads"] {
+        &:hover {
+          &:before {
+            .sprite-pos(9, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(9, 1, 30px);
+        }
+      }
+      &#viewImagesButton {
+        &:hover {
+          &:before {
+            .sprite-pos(10, 2, 30px);
+          }
+        }
+        &:before {
+          .sprite-pos(10, 1, 30px);
+        }
+      }
+    }
+  }
+}
+#header-bottom-right {
+  border-bottom:solid 1px @menu-border;
+  padding:40px 0px 0px 0px !important;
+  background-color:transparent;
+  position:relative;
+  font-size:18px;
+  display:block;
+  margin:0px;
+  &:before {
+    text-transform:uppercase;
+    position:absolute;
+    line-height:40px;
+    padding:0px 15px;
+    font-size:12px;
+    content:'User';
+    height:40px;
+    left:0px;
+    top:0px;
+  }
+  .user {
+    line-height:normal;
+    font-size:0px;
+    display:block;
+  }
+  .userkarma {
+    display:none;
+  }
+  .separator {
+    display:none;
+  }
+  a[href*="user"] {
+    background-color:transparent !important;
+    padding:10px 20px 10px 50px;
+    text-transform:capitalize;
+    border:none !important;
+    margin:0px !important;
+    font-weight:normal;
+    position:relative;
+    .transition(slow);
+    font-size:18px;
+    display:block;
+    color:@menu;
+    &:hover {
+      background-color:@menu-bg-hover !important;
+      color:@menu-hover;
+      &:before {
+        .sprite-pos(1, 6, 30px);
+      }
+    }
+    &:before {
+      .sprite(1, 5, 30px);
+      position:absolute;
+      .transition(slow);
+      height:30px;
+      content:'';
+      width:30px;
+      left:10px;
+      top:5px;
+    }
+  }
+  #mail, #modmail, .pref-lang, .logout {
+    width:40px !important;
+    display:inline-block;
+    text-indent:-9999px;
+    vertical-align:top;
+    .transition(slow);
+    height:40px;
+    padding:0px;
+    margin:0px;
+    left:0px;
+    top:0px;
+    &:hover {
+      background-color:@menu-bg-hover !important;
+      color:@menu-hover;
+      cursor:pointer;
+    }
+  }
+  #mail {
+    &:hover {
+      .sprite-pos(2, 6, 40px);
+    }
+    .sprite(2, 5, 40px);
+    &.havemail {
+      &:hover {
+        .sprite-pos(4, 6, 40px);
+      }
+      .sprite(4, 5, 40px);
+    }
+  }
+  #modmail {
+    &:hover {
+      .sprite-pos(3, 6, 40px);
+    }
+    .sprite(3, 5, 40px);
+    &.havemail {
+      &:hover {
+        .sprite-pos(5, 6, 40px);
+      }
+      .sprite(5, 5, 40px);
+    }
+  }
+  .pref-lang {
+    &:hover {
+      .sprite-pos(6, 6, 40px);
+    }
+    .sprite(6, 5, 40px);
+  }
+  .logout {
+    &:hover {
+      .sprite-pos(8, 6, 40px);
+    }
+    .sprite(8, 5, 40px);
+  }
+}
+#userbarToggle, #RESAccountSwitcherIcon {
+  display:none !important;
+}
+.side {
+  background-color:@sidebar-bg;
+  margin:0px 0px 0px 0px;
+  padding:0px 10px;
+  position:fixed;
+  color:@sidebar;
+  height:100%;
+  width:280px;
+  float:none;
+  right:0px;
+  top:0px;
+  .spacer {
+    margin:0px;
+    &:last-child, &:nth-last-child(2) {
+      display:none;
+    }
+  }
+  .sidebox {
+    &.create, &.submit {
+      .morelink {
+        padding:0px 0px;
+        background:none;
+        border:none;
+        height:auto;
+        a {
+          background-color:@sidebutton-bg;
+          padding:5px 10px 5px 35px;
+          font-weight:normal;
+          color:@sidebutton;
+          border-radius:5px;
+          position:relative;
+          .transition(slow);
+          text-align:left;
+          display:block;
+          height:auto;
+          width:235px;
+          &:hover {
+            background-color:@sidebutton-bg-hover;
+            color:@sidebutton-hover;
+            &:before {
+              .sprite-pos(3, 2, 30px);
+            }
+          }
+          &:before {
+            .sprite(3, 1, 30px);
+            position:absolute;
+            .transition(slow);
+            height:30px;
+            content:'';
+            width:30px;
+            left:5px;
+            top:4px;
+          }
+        }
+        .nub {
+          display:none;
+        }
+      }
+    }
+    &.submit-link {
+      .morelink {
+        a {
+          &:hover {
+            &:before {
+              .sprite-pos(1, 4, 30px);
+            }
+          }
+          &:before {
+            .sprite-pos(1, 3, 30px);
+          }
+        }
+      }
+    }
+    &.submit-text {
+      .morelink {
+        a {
+          &:hover {
+            &:before {
+              .sprite-pos(2, 4, 30px);
+            }
+          }
+          &:before {
+            .sprite-pos(2, 3, 30px);
+          }
+        }
+      }
+    }
+    &.create {
+      .morelink {
+        a {
+          &:hover {
+            &:before {
+              .sprite-pos(5, 4, 30px);
+            }
+          }
+          &:before {
+            .sprite-pos(5, 3, 30px);
+          }
+        }
+      }
+    }
+    &.disabled {
+      .morelink {
+        a {
+          &:hover {
+            background-color:@sidebutton-bg;
+            color:@sidebutton;
+            &:before {
+              .sprite-pos(4, 3, 30px);
+            }
+          }
+          &:before {
+            .sprite-pos(4, 3, 30px);
+          }
+        }
+      }
+    }
+  }
+  .subtitle {
+    color:@sidesubtitle;
+    padding:5px 10px;
+    margin:0px;
+  }
+  .titlebox {
+    .redditname {
+      overflow:visible;
+      padding:0px 0px;
+      height:auto;
+      margin:0px;
+      a {
+        background-color:@sidebutton-bg;
+        padding:12px 10px 12px 35px;
+        text-decoration:none;
+        font-weight:normal;
+        color:@sidebutton;
+        border-radius:5px;
+        position:relative;
+        .transition(slow);
+        text-align:left;
+        font-size:16px;
+        display:block;
+        width:235px;
+        &:hover {
+          background-color:@sidebutton-bg-hover;
+          color:@sidebutton-hover;
+          &:before {
+            .sprite-pos(3, 4, 30px);
+          }
+        }
+        &:before {
+          .sprite(3, 3, 30px);
+          position:absolute;
+          .transition(slow);
+          height:30px;
+          content:'';
+          width:30px;
+          left:5px;
+          top:4px;
+        }
+      }
+    }
+    .RESshortcut, .REStoggle {
+      background-color:@sidesubbutton-bg;
+      background-image:none !important;
+      color:@sidesubbutton !important;
+      text-transform:capitalize;
+      border:none !important;
+      display:inline-block;
+      vertical-align:top;
+      font-weight:normal;
+      border-radius:4px;
+      .transition(slow);
+      line-height:20px;
+      padding:0px 5px;
+      font-size:12px;
+      outline:none;
+      height:20px;
+      margin:0px;
+      width:auto;
+      &:hover {
+        background-color:@sidesubbutton-bg-hover;
+        color:@sidesubbutton-hover !important;
+      }
+    }
+    .subscribe-button {
+      padding:0px 0px;
+      display:block;
+      height:20px;
+      margin:0px;
+      .option {
+        &.active {
+          display:inline-block;
+        }
+        background-color:@sidesubbutton-bg;
+        background-image:none !important;
+        color:@sidesubbutton !important;
+        text-transform:capitalize;
+        border:none !important;
+        vertical-align:top;
+        font-weight:normal;
+        border-radius:4px;
+        .transition(slow);
+        line-height:20px;
+        padding:0px 5px;
+        font-size:12px;
+        outline:none;
+        height:20px;
+        margin:0px;
+        &:hover {
+          background-color:@sidesubbutton-bg-hover;
+          color:@sidesubbutton-hover !important;
+        }
+      }
+    }
+    .subButtons {
+      display:block;
+      .subscribe-button {
+        padding:0px 0px 0px 0px;
+        display:inline-block;
+      }
+    }
+    .subscribers, .users-online {
+      padding:0px 0px 0px 12px;
+      margin:10px 0px 5px 0px;
+      display:inline-block;
+      vertical-align:top;
+      color:@sidecounter;
+      position:relative;
+      height:40px;
+      width:118px;
+      &:before {
+        position:absolute;
+        background:none;
+        padding:0px;
+        margin:0px;
+      }
+      &:after {
+        background-color:@sidecounter-border;
+        border-radius:2px;
+        position:absolute;
+        height:30px;
+        content:'';
+        width:2px;
+        left:0px;
+        top:0px;
+      }
+      .number {
+        position:relative;
+        font-size:16px;
+        display:block;
+        &:before {
+          position:absolute;
+          font-size:10px;
+          display:block;
+          top:100%;
+        }
+      }
+      .word {
+        display:none;
+      }
+    }
+    .subscribers .number:before {
+      content:'reader(s)';
+    }
+    .users-online .number:before {
+      content:'user(s) online';
+    }
+    .bottom {
+      display:none;
+    }
+  }
+  .leavemoderator, .leavecontributor-button, .flairtoggle, .tagline {
+    display:none;
+  }
+  #wikiactions {
+    .title {
+      h1 {
+        font-size:0px !important;
+        &:after {
+          content:'Wiki Tools';
+          text-transform:none;
+          font-size:14px;
+          display:block;
+        }
+      }
+    }
+  }
+  #moderation_tools {
+    .title {
+      h1 {
+        font-size:0px !important;
+        &:after {
+          content:'Moderation Tools';
+          text-transform:none;
+          font-size:14px;
+          display:block;
+        }
+      }
+    }
+  }
+  .sidecontentbox {
+    position:relative;
+    padding:0px 0px;
+    margin:0px;
+    .helplink {
+      text-align:center;
+      position:absolute;
+      color:@sidebutton;
+      .transition(slow);
+      line-height:28px;
+      background:none;
+      font-size:10px;
+      padding:0px;
+      border:none;
+      height:30px;
+      margin:0px;
+      z-index:1;
+      right:8px;
+      top:4px;
+    }
+    &.collapsible  {
+      &:hover .title {
+        h1 {
+          background-color:@sidebutton-bg-hover;
+          color:@sidebutton-hover;
+        }
+        .collapse-button {
+          color:@sidebutton-hover;
+        }
+      }
+      .title .collapse-button {
+        text-align:center;
+        position:absolute;
+        color:@sidebutton;
+        .transition(slow);
+        line-height:28px;
+        background:none;
+        font-size:18px;
+        padding:0px;
+        border:none;
+        height:30px;
+        width:30px;
+        margin:0px;
+        left:5px;
+        top:4px;
+      }
+    }
+    &:not(.collapsible) {
+      .title {
+        &:before {
+          text-align:center;
+          position:absolute;
+          color:@sidebutton;
+          .transition(slow);
+          line-height:36px;
+          background:none;
+          font-size:20px;
+          height:30px;
+          content:'*';
+          width:30px;
+          left:5px;
+          top:4px;
+        }
+        h1 {
+          font-size:0px;
+          &:after {
+            content:'Moderators';
+            text-transform:none;
+            font-size:14px;
+          }
+        }
+      }
+    }
+    .title {
+      border-radius:5px;
+      position:relative;
+      display:block;
+      h1 {
+        background-color:@sidebutton-bg;
+        padding:10px 10px 10px 35px;
+        font-weight:normal;
+        color:@sidebutton;
+        border-radius:5px;
+        position:relative;
+        .transition(slow);
+        text-align:left;
+        font-size:14px;
+        display:block;
+        width:235px;
+        height:100%;
+      }
+    }
+    .content {
+      padding:0px 10px;
+      border:none;
+      .author {
+        padding:0px 10px 0px 20px;
+        display:inline-block;
+        color:@content-tag;
+        position:relative;
+        .transition(slow);
+        line-height:15px;
+        font-size:10px;
+        height:15px;
+        &:before {
+          .sprite(10, 5, 15px);
+          position:absolute;
+          .transition(slow);
+          height:15px;
+          content:'';
+          width:15px;
+          left:0px;
+          top:0px;
+        }
+        &:hover {
+          color:@content-tag-hover;
+          text-decoration:none;
+          &:before {
+            .sprite(10, 6, 15px);
+          }
+        }
+      }
+      .more {
+        display:none;
+      }
+    }
+  }
+}
+#search {
+  height:61px;
+  input[type="text"] {
+    border:solid 2px @search-border;
+    background-color:transparent;
+    text-transform:capitalize;
+    padding:0px 20px 0px 35px;
+    border-radius:20px;
+    margin:10px 0px;
+    color:@search;
+    height:40px;
+    width:280px;
+    &:focus {
+      color:@search-focus;
+      outline:none;
+    }
+  }
+  input[type="submit"] {
+    margin:0px 0px 0px -275px;
+  }
+}
+#searchexpando {
+  position:relative;
+  z-index:996;
+}
+#ad_main, #ad_sponsorship {
+  display:none;
+}
+.submit-page .content:before { content:'Submitting a Post'; }
+.hot-page .content:before { content:'Hot Posts'; }
+.new-page .content:before { content:'New Posts'; }
+.rising-page .content:before { content:'Rising Posts'; }
+.controversial-page .content:before { content:'Controversial Posts'; }
+.top-page .content:before { content:'Top Posts'; }
+.wiki-page .content:before { content:'Wiki'; }
+.content {
+  padding:61px 0px 0px 35px;
+  margin:0px;
+  &:before {
+    background-color:@topbar-bg;
+    line-height:60px;
+    padding:0px 25px;
+    text-align:left;
+    content:'Posts';
+    font-size:18px;
+    position:fixed;
+    display:block;
+    color:@topbar;
+    height:61px;
+    right:300px;
+    left:300px;
+    z-index:5;
+    top:0px;
+  }
+  &:after {
+    background-color:@content-border;
+    position:fixed;
+    display:block;
+    height:100%;
+    content:'';
+    z-index:-1;
+    left:315px;
+    width:5px;
+    top:0px;
+  }
+}
+.sitetable {
+  padding:15px 15px 0px 0px;
+  .thing {
+    background-color:@content-thing-bg;
+    padding:0px 0px 0px 40px;
+    margin:0px 0px 0px 0px;
+    border-radius:5px;
+    position:relative;
+    min-height:60px;
+    &.last-clicked {
+      overflow:visible;
+      border:none;
+    }
+    .rank {
+      background-color:@content-rank-bg;
+      margin:0px 0px 0px 0px;
+      width:20px !important;
+      color:@content-rank;
+      border-radius:10px;
+      text-align:center;
+      position:absolute;
+      line-height:20px;
+      overflow:visible;
+      font-size:10px;
+      display:block;
+      left:-27.5px;
+      height:20px;
+      top:10px;
+      &:before {
+        border-color:transparent @content-thing-bg transparent transparent;
+        margin:-5px 0px 0px 0px;
+        border-style:solid;
+        position:absolute;
+        border-width:5px;
+        display:block;
+        right:-7.5px;
+        content:'';
+        height:0px;
+        width:0px;
+        top:50%;
+      }
+    }
+    .midcol {
+      background-color:@content-midcol-bg;
+      margin:0px 0px 0px 0px;
+      width:40px !important;
+      border-radius:4px;
+      position:absolute;
+      display:block;
+      height:60px;
+      left:0px;
+      top:5px;
+      .arrow {
+        margin:0px auto;
+        height:20px;
+        width:20px;
+        &.up {
+          .sprite(6, 3, 30px, 5px);
+        }
+        &.upmod {
+          .sprite(6, 4, 30px, 5px);
+        }
+        &.down {
+          .sprite(7, 3, 30px, 5px);
+        }
+        &.downmod {
+          .sprite(7, 4, 30px, 5px);
+        }
+      }
+      .score {
+        color:@content-midcol;
+        font-weight:normal;
+        line-height:20px;
+        height:20px;
+        &.likes {
+          color:@content-midcol-likes;
+        }
+        &.dislikes {
+          color:@content-midcol-dislikes;
+        }
+      }
+    }
+    .entry {
+      padding:10px 10px 10px 0px;
+      margin:0px;
+    }
+    .title {
+      margin:0px 0px 5px 0px;
+      .title {
+        color:@content-title;
+        .transition(slow);
+        &:hover {
+          color:@content-title-hover;
+        }
+      }
+      .domain {
+        color:@content-domain;
+        a {
+          color:@content-domain;
+          .transition(slow);
+          &:hover {
+            color:@content-domain-hover;
+            text-decoration:none;
+          }
+        }
+      }
+    }
+    .expando-button {
+      background-color:@content-expand-bg;
+      max-height:30px !important;
+      max-width:30px !important;
+      margin:0px 5px 0px 0px;
+      border-radius:3px;
+      .transition(slow);
+      cursor:pointer;
+      display:block;
+      height:30px;
+      width:30px;
+      &:hover {
+        background-color:@content-expand-bg-hover;
+      }
+      &.selftext {
+        .sprite(8, 3, 30px);
+        &:hover {
+          .sprite-pos(8, 4, 30px);
+        }
+      }
+      &.image {
+        .sprite(9, 3, 30px);
+        &:hover {
+          .sprite-pos(9, 4, 30px);
+        }
+      }
+      &.video {
+        .sprite(10, 3, 30px);
+        &:hover {
+          .sprite-pos(10, 4, 30px);
+        }
+      }
+    }
+    .tagline {
+      font-size:0px;
+      display:block;
+      height:15px;
+      .live-timestamp, .author {
+        padding:0px 10px 0px 20px;
+        display:inline-block;
+        color:@content-tag;
+        position:relative;
+        .transition(slow);
+        line-height:15px;
+        font-size:10px;
+        height:15px;
+        &:before {
+          .transition(slow);
+          position:absolute;
+          height:15px;
+          content:'';
+          width:15px;
+          left:0px;
+          top:0px;
+        }
+      }
+      .live-timestamp {
+        &:before {
+          .sprite(9, 5, 15px);
+        }
+      }
+      .author {
+        &:hover {
+          color:@content-tag-hover;
+          text-decoration:none;
+          &:before {
+            .sprite(10, 6, 15px);
+          }
+        }
+        &:before {
+          .sprite(10, 5, 15px);
+        }
+      }
+    }
+    .buttons {
+      height:15px;
+      li {
+        padding:0px 10px 0px 0px;
+        display:inline-block;
+        height:15px;
+        margin:0px;
+        & > a, form a, .toggle a.active, .redditSingleClick {
+          color:@content-buttons;
+          display:inline-block;
+          font-weight:normal;
+          .transition(slow);
+          line-height:15px;
+          height:15px;
+          &:hover {
+            color:@content-buttons-hover;
+            text-decoration:none;
+          }
+        }
+      }
+    }
+    .md {
+      border:solid 1px transparent;
+      border-radius:5px;
+    }
+    .clearleft {
+      display:none;
+    }
+  }
+  .clearleft {
+    height:15px;
+  }
+}
+.footer {
+  display:none;
+}
+.bottommenu {
+  color:@content;
+  a {
+    color:@content !important;
+  }
+}
+.debuginfo {
+  display:none;
+}

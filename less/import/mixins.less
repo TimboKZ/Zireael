@@ -1,0 +1,43 @@
+@import "variables";
+
+.box-shadow(...) {
+  -webkit-box-shadow+: @arguments;
+  -moz-box-shadow+: @arguments;
+  box-shadow+: @arguments;
+}
+.box-sizing() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.transition(quick; @target: all) {
+  .transition(@target; 200ms; ease; 0s);
+}
+.transition(slow; @target: all) {
+  .transition(@target; 500ms; ease; 0s);
+}
+.transition(@target; @duration; @easing; @delay) {
+  -webkit-transition: @target @duration @easing @delay;
+  -moz-transition: @target @duration @easing @delay;
+  -o-transition: @target @duration @easing @delay;
+  transition: @target @duration @easing @delay;
+}
+.transform(...) {
+  -webkit-transform:@arguments;
+  -ms-transform:@arguments;
+  transform:@arguments;
+}
+.sprite(@column; @row; @size; @offset: 0px) {
+  @sprite-width: 10;
+  @sprite-height: 6;
+  background-position:-((@column - 1) * @size + @offset) -((@row - 1) * @size + @offset);
+  background-size:@size * @sprite-width @size * @sprite-height;
+  background-image:url('%%ciri-sprite%%');
+  background-repeat:no-repeat;
+}
+.sprite-pos(@column; @row; @size; @offset: 0px) {
+  background-position:-((@column - 1) * @size + @offset) -((@row - 1) * @size + @offset);
+}
+.side-icon(@column; @row; @size) {
+  .sprite-pos(@column; @row; @size);
+}
